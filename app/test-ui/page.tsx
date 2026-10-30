@@ -7,9 +7,9 @@ export default function UITestPage() {
   return (
     <>
       <SliderTest></SliderTest>
-      <Separator className={"m-4"}></Separator>
+      <Separator />
       <AlertTest></AlertTest>
-      <Separator className={"m-4"}></Separator>
+      <Separator />
       <AccordionTest></AccordionTest>
     </>
   );
