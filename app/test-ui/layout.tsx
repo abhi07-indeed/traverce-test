@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import Header from "./(components)/header";
+import Header from "./_components/header";
 
 export default function UILayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,16 +1,14 @@
-import SliderTest from "./(components)/slider_test";
-import AccordionTest from "./(components)/accordion_test";
+import SliderTest from "./_components/slider_test";
+import AccordionTest from "./_components/accordion_test";
 import { Separator } from "@/components/ui/separator";
-import AlertTest from "./(components)/alert_test";
+import AlertTest from "./_components/alert_test";
 
 export default function UITestPage() {
   return (
     <>
-      <SliderTest></SliderTest>
-      <Separator />
-      <AlertTest></AlertTest>
-      <Separator />
-      <AccordionTest></AccordionTest>
+      <SliderTest />
+      <AlertTest />
+      <AccordionTest />
     </>
   );
 }

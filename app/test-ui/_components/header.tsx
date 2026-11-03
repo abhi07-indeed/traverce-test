@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <div className="flex items-center justify-between pl-2 pr-2">
       <div className="flex gap-2">
-        <BackButton></BackButton>
+        {/* <BackButton></BackButton>` */}
         <MenuButton />
       </div>
 

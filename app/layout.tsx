@@ -31,7 +31,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${archivoBlack.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className={"min-h-full flex flex-col p-2"}>
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
