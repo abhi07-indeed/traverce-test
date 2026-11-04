@@ -12,48 +12,23 @@ import {
   ComboboxList,
   ComboboxSeparator,
 } from "@/components/ui/combobox";
-const timezones = [
+const endpoints = [
   {
-    value: "Americas",
-    items: [
-      "(GMT-5) New York",
-      "(GMT-8) Los Angeles",
-      "(GMT-6) Chicago",
-      "(GMT-5) Toronto",
-      "(GMT-8) Vancouver",
-      "(GMT-3) São Paulo",
-    ],
+    value: "Floor 1",
+    items: ["Library", "CR-101", "CR-102", "CR-103", "CR-104"],
   },
   {
-    value: "Europe",
-    items: [
-      "(GMT+0) London",
-      "(GMT+1) Paris",
-      "(GMT+1) Berlin",
-      "(GMT+1) Rome",
-      "(GMT+1) Madrid",
-      "(GMT+1) Amsterdam",
-    ],
+    value: "Floor 2",
+    items: ["LAB-201", "LAB-202", "CR-201", "CR-202", "CR-203", "CR-204"],
   },
-  {
-    value: "Asia/Pacific",
-    items: [
-      "(GMT+9) Tokyo",
-      "(GMT+8) Shanghai",
-      "(GMT+8) Singapore",
-      "(GMT+4) Dubai",
-      "(GMT+11) Sydney",
-      "(GMT+9) Seoul",
-    ],
-  },
-] as const;
+];
 
 export default function ComboBoxTest() {
   return (
-    <Combobox items={timezones}>
-      <ComboboxInput placeholder="Select a timezone" />
-      <ComboboxContent>
-        <ComboboxEmpty>No timezones found.</ComboboxEmpty>
+    <Combobox items={endpoints}>
+      <ComboboxInput placeholder="Select an endpoint" showClear />
+      <ComboboxContent className={"bg-secondary"}>
+        <ComboboxEmpty>Endpoint not found.</ComboboxEmpty>
         <ComboboxList>
           {(group, index) => (
             <ComboboxGroup key={group.value} items={group.items}>
@@ -65,7 +40,7 @@ export default function ComboBoxTest() {
                   </ComboboxItem>
                 )}
               </ComboboxCollection>
-              {index < timezones.length - 1 && <ComboboxSeparator />}
+              {index < endpoints.length - 1 && <ComboboxSeparator />}
             </ComboboxGroup>
           )}
         </ComboboxList>
