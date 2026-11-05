@@ -1,25 +1,47 @@
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { ArrowLeftIcon, MenuIcon } from "lucide-react";
+import {
+  CompassIcon,
+  MenuIcon,
+  ArrowRightIcon,
+  UserRoundIcon,
+  BuildingIcon,
+  ScrollIcon,
+} from "lucide-react";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
+  SheetFooter,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
-import Link from "next/link";
 import ToggleTheme from "./toggle_theme";
+import { Separator } from "@/components/ui/separator";
+import {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item";
 
 export default function Header() {
   return (
     <div className="flex items-center justify-between pl-2 pr-2">
       <div className="flex gap-2">
-        {/* <BackButton></BackButton>` */}
-        <MenuButton />
+        <SideDrawer />
       </div>
 
       <Label className="text-3xl cursor-move">Traverce</Label>
@@ -31,17 +53,25 @@ export default function Header() {
   );
 }
 
-function BackButton() {
-  return (
-    <Link href="/">
-      <Button size={"icon-lg"} variant="secondary">
-        <ArrowLeftIcon />
-      </Button>
-    </Link>
-  );
-}
+const itemTiles = [
+  {
+    icon: <UserRoundIcon />,
+    title: "Faculty",
+    description: "Find cabin and other details",
+  },
+  {
+    icon: <BuildingIcon />,
+    title: "Offices",
+    description: "Find offices and their timings",
+  },
+  {
+    icon: <ScrollIcon />,
+    title: "Suggestions",
+    description: "Explore suggestions or submit your own",
+  },
+];
 
-function MenuButton() {
+const SideDrawer = () => {
   return (
     <Sheet>
       <SheetTrigger render={<Button size={"icon-lg"} />}>
@@ -50,14 +80,41 @@ function MenuButton() {
       <SheetContent
         showCloseButton={false}
         side="left"
-        className="bg-amber-50 dark:bg-gray-800"
+        className="bg-amber-50 dark:bg-[#121d21]"
       >
-        <SheetHeader>
-          <SheetTitle>Country Lode Take Me Home!</SheetTitle>
-          <SheetDescription>Something something it seems</SheetDescription>
-          <ToggleTheme></ToggleTheme>
+        <SheetHeader className="items-center gap-4">
+          <CompassIcon size={80} />
+          <Separator></Separator>
         </SheetHeader>
+
+        <div className="px-4 gap-2 flex flex-col">
+          {itemTiles.map((item) => {
+            return (
+              <Card key={itemTiles.indexOf(item)} className="p-1">
+                <Item className="m-0">
+                  <ItemMedia variant={"icon"}>{item.icon}</ItemMedia>
+                  <ItemContent>
+                    <ItemTitle>{item.title}</ItemTitle>
+                    <ItemDescription>{item.description}</ItemDescription>
+                  </ItemContent>
+
+                  <ItemActions>
+                    {" "}
+                    <Button size={"icon-lg"}>
+                      {" "}
+                      <ArrowRightIcon />
+                    </Button>{" "}
+                  </ItemActions>
+                </Item>
+              </Card>
+            );
+          })}
+        </div>
+
+        <SheetFooter>
+          <ToggleTheme />
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
-}
+};

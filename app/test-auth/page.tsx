@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { signIn, signOut } from "@/auth";
-import { redirect } from "next/dist/server/api-utils";
 import { SessionProvider } from "next-auth/react";
 import AuthenticationStatus from "./AuthenticationStatus";
 
@@ -11,13 +10,13 @@ async function handleSignIn() {
 
 async function handleSignOut() {
   "use server";
-  await signOut();
+  await signOut({ redirectTo: "/" });
 }
 
 export default function TestAuth() {
   return (
     <>
-      <SessionProvider refetchInterval={1}>
+      <SessionProvider>
         <AuthenticationStatus />
       </SessionProvider>
       <Button className={"w-fit"} onClick={handleSignIn}>

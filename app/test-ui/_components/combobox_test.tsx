@@ -12,6 +12,7 @@ import {
   ComboboxList,
   ComboboxSeparator,
 } from "@/components/ui/combobox";
+
 const endpoints = [
   {
     value: "Floor 1",
@@ -26,8 +27,8 @@ const endpoints = [
 export default function ComboBoxTest() {
   return (
     <Combobox items={endpoints}>
-      <ComboboxInput placeholder="Select an endpoint" showClear />
-      <ComboboxContent className={"bg-secondary"}>
+      <ComboboxInput placeholder="Select an endpoint" showClear={true} className={"h-15"}/>
+      <ComboboxContent className={"bg-secondary-foreground"}>
         <ComboboxEmpty>Endpoint not found.</ComboboxEmpty>
         <ComboboxList>
           {(group, index) => (

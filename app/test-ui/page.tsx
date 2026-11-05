@@ -8,7 +8,7 @@ export default function UITestPage() {
   return (
     <>
       <SliderTest />
-      <ComboBoxTest></ComboBoxTest>
+      <ComboBoxTest />
       <AlertTest />
       <AccordionTest />
 
