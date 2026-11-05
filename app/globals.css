@@ -6,7 +6,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
@@ -72,22 +72,23 @@
 }
 
 .dark {
-  --background: #1a1815;
-  --foreground: #f5f0e6;
-  --card: #262320;
-  --card-foreground: #f5f0e6;
-  --primary: #ffdc58;
-  --primary-hover: #ffd12e;
+  --radius: 0;
+  --background: #121d21;
+  --foreground: #fcfcfc;
+  --card: #365863;
+  --card-foreground: #ffffff;
+  --primary: #bdd3db;
+  --primary-hover: #fff;
   --primary-foreground: #000;
-  --secondary: #3a352f;
-  --secondary-foreground: #f5f0e6;
-  --muted: #2e2a24;
-  --muted-foreground: #b3ac9e;
+  --secondary: #9cbec9;
+  --secondary-foreground: #1a1815;
+  --muted: #898686;
+  --muted-foreground: #fcfcfc;
   --accent: #38342b;
-  --accent-foreground: #f5f0e6;
+  --accent-foreground: #a3a2a1;
   --destructive: #ff6b6b;
   --destructive-foreground: #1a1815;
   --border: #000;
-  --input: #262320;
-  --ring: #ffdc58;
+  --input: #9cbec9;
+  --ring: #9cbec9;
 }
