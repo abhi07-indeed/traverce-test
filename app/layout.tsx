@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
-import { Archivo_Black, Space_Grotesk, Geist } from "next/font/google";
-
 import "./globals.css";
-import { cn } from "@/lib/utils";
+
+import type { Metadata } from "next";
+import { Archivo_Black, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 const archivoBlack = Archivo_Black({

@@ -1,6 +1,10 @@
-import { Label } from "@/components/ui/label";
+import ToggleTheme from "./toggle_theme";
+import ItemTile from "./item_tile";
+import UserAvatar from "./user_icon";
+
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Label } from "@/components/ui/label";
+
 import {
   CompassIcon,
   MenuIcon,
@@ -8,6 +12,7 @@ import {
   BuildingIcon,
   ScrollIcon,
 } from "lucide-react";
+
 import {
   Sheet,
   SheetContent,
@@ -15,10 +20,8 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import ToggleTheme from "./toggle_theme";
+
 import { Separator } from "@/components/ui/separator";
-import ItemTile from "./item_tile";
-import UserAvatar from "./user_icon";
 import { SessionProvider } from "next-auth/react";
 
 export default function Header() {
@@ -74,7 +77,11 @@ const SideDrawer = () => {
         <div className="px-4 gap-2 flex flex-col">
           {itemTiles.map((item) => {
             return (
-              <ItemTile key={itemTiles.indexOf(item)} item={item} redirectTo="/"/>
+              <ItemTile
+                key={itemTiles.indexOf(item)}
+                item={item}
+                redirectTo="/"
+              />
             );
           })}
         </div>

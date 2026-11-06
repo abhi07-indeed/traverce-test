@@ -1,7 +1,8 @@
 import Header from "./test-ui/_components/header";
-import { Separator } from "@/components/ui/separator";
 import ComboBoxTest from "./test-ui/_components/combobox_test";
+
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { LocateFixed } from "lucide-react";
 
 export default function Home() {

@@ -1,5 +1,7 @@
 "use client";
 
+// TODO: fix dropdown showing when button is login
+
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";

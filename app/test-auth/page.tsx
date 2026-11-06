@@ -1,7 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { signIn, signOut, auth } from "@/auth";
-import { SessionProvider } from "next-auth/react";
 import AuthenticationStatus from "./AuthenticationStatus";
+
+import { signIn, signOut, auth } from "@/auth";
+import { Button } from "@/components/ui/button";
+import { SessionProvider } from "next-auth/react";
 
 async function handleSignIn() {
   "use server";
