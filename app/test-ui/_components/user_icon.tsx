@@ -5,6 +5,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+
 import { LogInIcon } from "lucide-react";
 import {
   DropdownMenu,
@@ -33,6 +34,7 @@ export default function UserAvatar() {
               className={"rounded-full p-0"}
               variant={"outline"}
               onClick={handleClick}
+              type="submit"
             />
           }
         >

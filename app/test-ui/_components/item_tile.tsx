@@ -1,6 +1,11 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRightIcon } from "lucide-react";
+import { ReactNode } from "react";
+import { useRouter } from "next/navigation";
+
 import {
   Item,
   ItemMedia,
@@ -9,10 +14,6 @@ import {
   ItemDescription,
   ItemActions,
 } from "@/components/ui/item";
-import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "lucide-react";
-import { ReactNode } from "react";
-import { redirect } from "next/navigation";
 
 type Item = { icon: ReactNode; title: string; description: string };
 
@@ -23,6 +24,8 @@ export default function ItemTile({
   item: Item;
   redirectTo: string;
 }) {
+  const router = useRouter();
+
   return (
     <Card className="p-0">
       <Item className="m-0">
@@ -34,7 +37,7 @@ export default function ItemTile({
 
         <ItemActions>
           {" "}
-          <Button size={"icon"} onClick={() => redirect(redirectTo)}>
+          <Button size={"icon"} onClick={() => router.push(`${redirectTo}`)}>
             {" "}
             <ArrowRightIcon />
           </Button>{" "}
