@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   Combobox,
   ComboboxCollection,
@@ -12,6 +14,7 @@ import {
   ComboboxList,
   ComboboxSeparator,
 } from "@/components/ui/combobox";
+import { ReactNode } from "react";
 
 const endpoints = [
   {
@@ -24,15 +27,21 @@ const endpoints = [
   },
 ];
 
-export default function ComboBoxTest({ headerText }: { headerText?: string }) {
+export default function ComboBoxTest({
+  headerText,
+  icon,
+}: {
+  headerText?: string;
+  icon: ReactNode;
+}) {
   return (
     <div className="flex flex-col gap-2 w-full">
-      {headerText && <p className="ml-1">{headerText}</p>}
+      {headerText && <p className="ml-1">{headerText}</p>}{" "}
       <Combobox items={endpoints}>
         <ComboboxInput
-          placeholder="Select an endpoint"
+          placeholder="CR-201"
           showClear={true}
-          className={"h-15"}
+          className={"h-15 w-full"}
         />
         <ComboboxContent className={"bg-secondary-foreground"}>
           <ComboboxEmpty>Endpoint not found.</ComboboxEmpty>

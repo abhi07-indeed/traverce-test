@@ -18,6 +18,8 @@ import {
 import ToggleTheme from "./toggle_theme";
 import { Separator } from "@/components/ui/separator";
 import ItemTile from "./item_tile";
+import UserAvatar from "./user_icon";
+import { SessionProvider } from "next-auth/react";
 
 export default function Header() {
   return (
@@ -28,9 +30,9 @@ export default function Header() {
 
       <Label className="text-3xl cursor-move">Traverce</Label>
 
-      <Avatar size="lg">
-        <AvatarImage src="https://www.github.com/techibuzz.png"></AvatarImage>
-      </Avatar>
+      <SessionProvider>
+        <UserAvatar />
+      </SessionProvider>
     </div>
   );
 }
