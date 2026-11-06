@@ -18,7 +18,7 @@ export default function UserAvatar() {
 
   function handleClick() {
     if (status !== "authenticated") {
-      signIn("github");
+      signIn();
     }
   }
 
