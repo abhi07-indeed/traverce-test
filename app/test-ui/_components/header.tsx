@@ -56,7 +56,7 @@ const itemTiles = [
 const SideDrawer = () => {
   return (
     <Sheet>
-      <SheetTrigger render={<Button size={"icon-lg"} />}>
+      <SheetTrigger render={<Button size={"icon"} />}>
         <MenuIcon />
       </SheetTrigger>
       <SheetContent

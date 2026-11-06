@@ -24,28 +24,35 @@ const endpoints = [
   },
 ];
 
-export default function ComboBoxTest() {
+export default function ComboBoxTest({ headerText }: { headerText?: string }) {
   return (
-    <Combobox items={endpoints}>
-      <ComboboxInput placeholder="Select an endpoint" showClear={true} className={"h-15"}/>
-      <ComboboxContent className={"bg-secondary-foreground"}>
-        <ComboboxEmpty>Endpoint not found.</ComboboxEmpty>
-        <ComboboxList>
-          {(group, index) => (
-            <ComboboxGroup key={group.value} items={group.items}>
-              <ComboboxLabel>{group.value}</ComboboxLabel>
-              <ComboboxCollection>
-                {(item) => (
-                  <ComboboxItem key={item} value={item}>
-                    {item}
-                  </ComboboxItem>
-                )}
-              </ComboboxCollection>
-              {index < endpoints.length - 1 && <ComboboxSeparator />}
-            </ComboboxGroup>
-          )}
-        </ComboboxList>
-      </ComboboxContent>
-    </Combobox>
+    <div className="flex flex-col gap-2 w-full">
+      {headerText && <p className="ml-1">{headerText}</p>}
+      <Combobox items={endpoints}>
+        <ComboboxInput
+          placeholder="Select an endpoint"
+          showClear={true}
+          className={"h-15"}
+        />
+        <ComboboxContent className={"bg-secondary-foreground"}>
+          <ComboboxEmpty>Endpoint not found.</ComboboxEmpty>
+          <ComboboxList>
+            {(group, index) => (
+              <ComboboxGroup key={group.value} items={group.items}>
+                <ComboboxLabel>{group.value}</ComboboxLabel>
+                <ComboboxCollection>
+                  {(item) => (
+                    <ComboboxItem key={item} value={item}>
+                      {item}
+                    </ComboboxItem>
+                  )}
+                </ComboboxCollection>
+                {index < endpoints.length - 1 && <ComboboxSeparator />}
+              </ComboboxGroup>
+            )}
+          </ComboboxList>
+        </ComboboxContent>
+      </Combobox>
+    </div>
   );
 }

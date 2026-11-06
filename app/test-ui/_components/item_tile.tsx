@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import {
   Item,
@@ -22,7 +24,7 @@ export default function ItemTile({
   redirectTo: string;
 }) {
   return (
-    <Card className="p-1">
+    <Card className="p-0">
       <Item className="m-0">
         <ItemMedia variant={"icon"}>{item.icon}</ItemMedia>
         <ItemContent>
@@ -32,7 +34,7 @@ export default function ItemTile({
 
         <ItemActions>
           {" "}
-          <Button size={"icon-lg"} onClick={() => redirect(redirectTo)}>
+          <Button size={"icon"} onClick={() => redirect(redirectTo)}>
             {" "}
             <ArrowRightIcon />
           </Button>{" "}
