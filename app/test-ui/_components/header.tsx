@@ -4,7 +4,6 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   CompassIcon,
   MenuIcon,
-  ArrowRightIcon,
   UserRoundIcon,
   BuildingIcon,
   ScrollIcon,
@@ -18,24 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import ToggleTheme from "./toggle_theme";
 import { Separator } from "@/components/ui/separator";
-import {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
-
-import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item";
+import ItemTile from "./item_tile";
 
 export default function Header() {
   return (
@@ -90,23 +72,7 @@ const SideDrawer = () => {
         <div className="px-4 gap-2 flex flex-col">
           {itemTiles.map((item) => {
             return (
-              <Card key={itemTiles.indexOf(item)} className="p-1">
-                <Item className="m-0">
-                  <ItemMedia variant={"icon"}>{item.icon}</ItemMedia>
-                  <ItemContent>
-                    <ItemTitle>{item.title}</ItemTitle>
-                    <ItemDescription>{item.description}</ItemDescription>
-                  </ItemContent>
-
-                  <ItemActions>
-                    {" "}
-                    <Button size={"icon-lg"}>
-                      {" "}
-                      <ArrowRightIcon />
-                    </Button>{" "}
-                  </ItemActions>
-                </Item>
-              </Card>
+              <ItemTile key={itemTiles.indexOf(item)} item={item} redirectTo="/"/>
             );
           })}
         </div>
