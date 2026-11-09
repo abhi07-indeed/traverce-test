@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AppDrawer from "./app_drawer";
 import UserAvatar from "./user_icon";
 
@@ -10,8 +11,9 @@ export default function Header() {
       <div className="flex gap-2">
         <AppDrawer />
       </div>
-
-      <Label className="text-3xl cursor-move">Traverce</Label>
+      <Label className="text-3xl cursor-move">
+        <Link href={"/"}>Traverce</Link>
+      </Label>
       <SessionProvider>
         <UserAvatar />
       </SessionProvider>

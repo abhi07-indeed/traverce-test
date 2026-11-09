@@ -2,7 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Archivo_Black, Space_Grotesk } from "next/font/google";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@wrksz/themes";
 
 const archivoBlack = Archivo_Black({
   subsets: ["latin"],
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      suppressHydrationWarning
       lang="en"
       className={`${archivoBlack.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >

@@ -12,6 +12,7 @@ import {
   ComboboxList,
   ComboboxSeparator,
 } from "@/components/ui/combobox";
+import { InputGroupAddon } from "@/components/ui/input-group";
 
 import { ReactNode } from "react";
 
@@ -27,21 +28,20 @@ const endpoints = [
 ];
 
 export default function ComboBoxTest({
-  headerText,
   icon,
 }: {
-  headerText?: string;
   icon: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-2 w-full">
-      {headerText && <p className="ml-1">{headerText}</p>}{" "}
+    <div className="flex flex-col gap-2 w-full items-center">
       <Combobox items={endpoints}>
         <ComboboxInput
-          placeholder="CR-201"
+          placeholder="Classroom  |  Office  |  Cabin"
           showClear={true}
-          className={"h-15 w-full"}
-        />
+          className={"h-15 w-full p-2 gap-2"}
+        >
+          <InputGroupAddon>{icon}</InputGroupAddon>
+        </ComboboxInput>
         <ComboboxContent className={"bg-secondary-foreground"}>
           <ComboboxEmpty>Endpoint not found.</ComboboxEmpty>
           <ComboboxList>

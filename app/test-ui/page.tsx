@@ -1,7 +1,7 @@
-import SliderTest from "./_components/slider_test";
 import AccordionTest from "./_components/accordion_test";
 import AlertTest from "./_components/alert_test";
 import ComboBoxTest from "./_components/combobox_test";
+import SliderTest from "./_components/slider_test";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function UITestPage() {
