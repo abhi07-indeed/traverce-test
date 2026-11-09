@@ -1,10 +1,10 @@
 import { Separator } from "@/components/ui/separator";
-import Header from "./_components/header";
+import AppHeader from "./_components/AppHeader";
 
 export default function UILayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-4">
-      <Header></Header>
+      <AppHeader></AppHeader>
       <Separator />
       {children}
     </div>

@@ -1,4 +1,4 @@
-import ComboBoxTest from "../test-ui/_components/combobox_test";
+import ComboBox from "../test-ui/_components/Combobox";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
@@ -32,11 +32,16 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col flex-1 gap-4 justify-center items-center p-4">
-        <Image src="/home_filler.png" width={300} height={300} alt="map"></Image>
+        <Image
+          src="/home_filler.png"
+          width={300}
+          height={300}
+          alt="map"
+        ></Image>
         <p className="ml-1 text-4xl font-semibold text-center">
           Where do you want to go?
         </p>
-        <ComboBoxTest icon={<LocateFixed />} />
+        <ComboBox icon={<LocateFixed />} />
         <Button className={"w-full h-15"}>Go</Button>
       </div>
     </>

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
-export default function AccordionTest() {
+export default function TestAccordion() {
   return (
     <Card className="p-2">
       <Label className="font-bold text-2xl">These are some things</Label>

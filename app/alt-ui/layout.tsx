@@ -3,7 +3,7 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { Archivo_Black, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@wrksz/themes";
-import Header from "../test-ui/_components/header";
+import AppHeader from "../test-ui/_components/AppHeader";
 import { Separator } from "@/components/ui/separator";
 
 const archivoBlack = Archivo_Black({
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <>
-      <Header />
+      <AppHeader />
       <Separator className={"mt-4 mb-4"} />
       {children}
     </>

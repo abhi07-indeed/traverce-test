@@ -1,5 +1,5 @@
-import Header from "./test-ui/_components/header";
-import ComboBoxTest from "./test-ui/_components/combobox_test";
+import AppHeader from "./test-ui/_components/AppHeader";
+import ComboBox from "./test-ui/_components/Combobox";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -9,11 +9,11 @@ import { LocateFixed } from "lucide-react";
 export default function Home() {
   return (
     <>
-      <Header />
+      <AppHeader />
       <Separator className={"mt-4 mb-4"} />
 
       <div className="flex flex-col flex-1 gap-4 align-middle justify-center items-center p-4">
-        <ComboBoxTest icon={<LocateFixed />} />
+        <ComboBox icon={<LocateFixed />} />
         <Button className={"w-full h-15"}>Go</Button>
 
         <Link href="/alt-ui">New UI Test</Link>

@@ -27,11 +27,7 @@ const endpoints = [
   },
 ];
 
-export default function ComboBoxTest({
-  icon,
-}: {
-  icon: ReactNode;
-}) {
+export default function ComboBox({ icon }: { icon: ReactNode }) {
   return (
     <div className="flex flex-col gap-2 w-full items-center">
       <Combobox items={endpoints}>

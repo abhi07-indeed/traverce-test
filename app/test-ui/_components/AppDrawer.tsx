@@ -1,5 +1,5 @@
-import ItemTile from "./item_tile";
-import ToggleTheme from "./toggle_theme";
+import ItemTile from "./ItemTile";
+import ToggleThemeButton from "./ToggleThemeButton";
 
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -63,7 +63,7 @@ export default async function AppDrawer() {
         </div>
 
         <SheetFooter>
-          <ToggleTheme />
+          <ToggleThemeButton />
         </SheetFooter>
       </SheetContent>
     </Sheet>

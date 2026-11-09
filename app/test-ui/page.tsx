@@ -1,16 +1,16 @@
-import AccordionTest from "./_components/accordion_test";
-import AlertTest from "./_components/alert_test";
-import ComboBoxTest from "./_components/combobox_test";
-import SliderTest from "./_components/slider_test";
+import TestAccordion from "./_components/TestAccordian";
+import Alert from "./_components/TestAlert";
+import ComboBox from "./_components/Combobox";
+import SliderTest from "./_components/TestSlider";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function UITestPage() {
   return (
     <>
       <SliderTest />
-      <ComboBoxTest icon={undefined} />
-      <AlertTest />
-      <AccordionTest />
+      <ComboBox icon={undefined} />
+      <Alert />
+      <TestAccordion />
 
       <Card className="mb-10">
         <CardContent>

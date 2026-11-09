@@ -1,11 +1,11 @@
 import Link from "next/link";
-import AppDrawer from "./app_drawer";
-import UserAvatar from "./user_icon";
+import AppDrawer from "./AppDrawer";
+import UserIconButton from "./UserIconButton";
 
 import { Label } from "@/components/ui/label";
 import { SessionProvider } from "next-auth/react";
 
-export default function Header() {
+export default function AppHeader() {
   return (
     <div className="flex items-center justify-between pl-2 pr-2">
       <div className="flex gap-2">
@@ -15,7 +15,7 @@ export default function Header() {
         <Link href={"/"}>Traverce</Link>
       </Label>
       <SessionProvider>
-        <UserAvatar />
+        <UserIconButton />
       </SessionProvider>
     </div>
   );

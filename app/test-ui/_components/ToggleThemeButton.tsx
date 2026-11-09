@@ -5,7 +5,7 @@ import { LightbulbIcon, MoonIcon } from "lucide-react";
 import { useTheme } from "@wrksz/themes/client";
 import { useEffect, useState } from "react";
 
-export default function ToggleTheme() {
+export default function ToggleThemeButton() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Spinner } from "@/components/ui/spinner";
 
-export default function UserAvatar() {
+export default function UserIconButton() {
   const { data } = useSession();
   const profileImage = data?.user?.image;
 
