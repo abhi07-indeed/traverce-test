@@ -1,6 +1,5 @@
 import ItemTile from "./item_tile";
 import ToggleTheme from "./toggle_theme";
-import LogoutButton from "./logout_button";
 
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
