@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function UserAvatar() {
   const { data } = useSession();
@@ -28,7 +29,9 @@ export default function UserAvatar() {
           >
             <Avatar size="lg">
               <AvatarImage src={profileImage!}></AvatarImage>
-              <AvatarFallback>u</AvatarFallback>
+              <AvatarFallback>
+                <Spinner />
+              </AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent className={"bg-secondary-foreground"}>
