@@ -1,8 +1,9 @@
 import ItemTile from "./item_tile";
 import ToggleTheme from "./toggle_theme";
+import LogoutButton from "./logout_button";
 
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -16,11 +17,9 @@ import {
   BuildingIcon,
   ScrollIcon,
   UserRoundIcon,
-  LogInIcon,
 } from "lucide-react";
 
-import { auth, signOut } from "@/auth";
-import { refresh, revalidatePath } from "next/cache";
+import { auth } from "@/auth";
 
 const itemTiles = [
   {
@@ -66,28 +65,6 @@ export default async function AppDrawer() {
 
         <SheetFooter>
           <ToggleTheme />
-
-          {session && (
-            <form
-              action={async () => {
-                "use server";
-                await signOut({ redirectTo: "/" });
-                refresh();
-                revalidatePath("/");
-              }}
-            >
-              <Button
-                variant={"destructive"}
-                type="submit"
-                className={"w-full"}
-              >
-                <>
-                  <LogInIcon />
-                  Logout
-                </>
-              </Button>
-            </form>
-          )}
         </SheetFooter>
       </SheetContent>
     </Sheet>
