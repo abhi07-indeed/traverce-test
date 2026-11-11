@@ -5,7 +5,6 @@ import SuggestionCard, { Suggestion } from "./_components/SuggestionCard";
 import TestAccordion from "./_components/TestAccordian";
 
 import { Card, CardContent } from "@/components/ui/card";
-import test from "node:test";
 
 export default function UITestPage() {
   const testsuggestion: Suggestion = {
@@ -17,7 +16,7 @@ export default function UITestPage() {
     upvotes: 0,
     downvotes: 2,
     tags: ["Timing", "Faculty"],
-    posted: "2026-11-11 21:01:34",
+    created_at: new Date(),
     status: "approved",
   };
 

@@ -1,9 +1,9 @@
 import "@/app/globals.css";
 
-import type { Metadata } from "next";
-import { Archivo_Black, Space_Grotesk } from "next/font/google";
-import { ThemeProvider } from "@wrksz/themes";
 import AppHeader from "../test-ui/_components/AppHeader";
+
+import { Archivo_Black, Space_Grotesk } from "next/font/google";
+import type { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
 
 const archivoBlack = Archivo_Black({

@@ -1,5 +1,8 @@
 "use client";
 
+import { InputGroupAddon } from "@/components/ui/input-group";
+import { ReactNode } from "react";
+
 import {
   Combobox,
   ComboboxCollection,
@@ -12,9 +15,6 @@ import {
   ComboboxList,
   ComboboxSeparator,
 } from "@/components/ui/combobox";
-import { InputGroupAddon } from "@/components/ui/input-group";
-
-import { ReactNode } from "react";
 
 const endpoints = [
   {

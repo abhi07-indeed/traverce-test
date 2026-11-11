@@ -1,8 +1,11 @@
 import ItemTile from "./ItemTile";
 import ToggleThemeButton from "./ToggleThemeButton";
 
-import { Separator } from "@/components/ui/separator";
+import { auth } from "@/auth";
+
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
 import {
   Sheet,
   SheetContent,
@@ -10,6 +13,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
 import {
   MenuIcon,
   CompassIcon,
@@ -17,8 +21,6 @@ import {
   ScrollIcon,
   UserRoundIcon,
 } from "lucide-react";
-
-import { auth } from "@/auth";
 
 const itemTiles = [
   {

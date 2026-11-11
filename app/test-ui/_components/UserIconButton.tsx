@@ -1,10 +1,12 @@
 "use client";
 
 import { useSession, signIn, signOut } from "next-auth/react";
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-
 import { LogInIcon } from "lucide-react";
+import { Spinner } from "@/components/ui/spinner";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Spinner } from "@/components/ui/spinner";
+
 
 export default function UserIconButton() {
   const { data } = useSession();

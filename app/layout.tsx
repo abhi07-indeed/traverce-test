@@ -1,7 +1,7 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
 import { Archivo_Black, Space_Grotesk } from "next/font/google";
+import type { Metadata } from "next";
 import { ThemeProvider } from "@wrksz/themes";
 
 const archivoBlack = Archivo_Black({

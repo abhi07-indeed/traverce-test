@@ -1,7 +1,10 @@
+import { ArrowBigDown, ArrowBigUp } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+
 import {
   Item,
   ItemMedia,
@@ -9,13 +12,9 @@ import {
   ItemActions,
   ItemSeparator,
   ItemContent,
-  ItemDescription,
   ItemTitle,
   ItemFooter,
 } from "@/components/ui/item";
-import { ArrowBigDown, ArrowBigUp } from "lucide-react";
-
-import { DateTime } from "next-auth/providers/kakao";
 
 export type Suggestion = {
   id: number;
@@ -25,7 +24,7 @@ export type Suggestion = {
   upvotes: number;
   downvotes: number;
   tags: string[];
-  posted: DateTime;
+  created_at: Date;
   status: "approved" | "declined" | "archived";
 };
 
@@ -34,6 +33,8 @@ export default function SuggestionCard({
 }: {
   suggestion: Suggestion;
 }) {
+  const cleanDate = new Date(suggestion.created_at).toDateString();
+
   return (
     <Card className="p-0">
       <Item variant={"outline"}>
@@ -45,7 +46,7 @@ export default function SuggestionCard({
           </ItemMedia>
           <div className="justify-start">
             <p className="font-bold">{suggestion.username}</p>
-            <p className="font-light">Posted on: {suggestion.posted}</p>
+            <p className="font-light">{cleanDate}</p>
           </div>
         </ItemHeader>
 
@@ -56,11 +57,16 @@ export default function SuggestionCard({
         </ItemContent>
 
         <ItemActions className="flex-col">
-          <Button className={"rounded-full p-3"}>
+          <Button className={"p-2 w-18 justify-between gap-0.5 overflow-clip"}>
             <ArrowBigUp />
+            <Label>{suggestion.upvotes}</Label>
           </Button>
-          <Button className={"rounded-full p-3"} variant={"destructive"}>
+          <Button
+            className={"p-2 w-18 justify-between gap-0.5 overflow-clip"}
+            variant={"destructive"}
+          >
             <ArrowBigDown />
+            <Label className="scale-100">{suggestion.downvotes}</Label>
           </Button>
         </ItemActions>
 
