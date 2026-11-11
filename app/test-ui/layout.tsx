@@ -4,7 +4,7 @@ import AppHeader from "./_components/AppHeader";
 export default function UILayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-4">
-      <AppHeader></AppHeader>
+      <AppHeader />
       <Separator />
       {children}
     </div>

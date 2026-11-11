@@ -1,16 +1,34 @@
-import TestAccordion from "./_components/TestAccordian";
 import Alert from "./_components/TestAlert";
 import ComboBox from "./_components/Combobox";
 import SliderTest from "./_components/TestSlider";
+import SuggestionCard, { Suggestion } from "./_components/SuggestionCard";
+import TestAccordion from "./_components/TestAccordian";
+
 import { Card, CardContent } from "@/components/ui/card";
+import test from "node:test";
 
 export default function UITestPage() {
+  const testsuggestion: Suggestion = {
+    id: 0,
+    username: "Test User",
+    user_profile: "https://github.com/techibuzz.png",
+    description:
+      "Ravikumar's Cabin is in Mech Block 69th floor. He is available at all times (jobless) and you can find your IDT posters thrown there.",
+    upvotes: 0,
+    downvotes: 2,
+    tags: ["Timing", "Faculty"],
+    posted: "2026-11-11 21:01:34",
+    status: "approved",
+  };
+
   return (
     <>
       <SliderTest />
       <ComboBox icon={undefined} />
       <Alert />
       <TestAccordion />
+
+      <SuggestionCard suggestion={testsuggestion} />
 
       <Card className="mb-10">
         <CardContent>
