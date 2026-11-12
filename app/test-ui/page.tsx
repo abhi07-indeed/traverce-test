@@ -9,10 +9,13 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function UITestPage() {
   const testsuggestion: Suggestion = {
     id: 0,
-    username: "Test User",
-    user_profile: "https://github.com/techibuzz.png",
+    user: {
+      id: "random",
+      name: "Test User",
+      image: "https://github.com/techibuzz.png",
+    },
     description:
-      "Ravikumar's Cabin is in Mech Block 69th floor. He is available at all times (jobless) and you can find your IDT posters thrown there.",
+      "Ravikumar's Cabin is in Mech Block 4th floor. Available from 10:00AM to 02:00PM.",
     upvotes: 0,
     downvotes: 2,
     tags: ["Timing", "Faculty"],

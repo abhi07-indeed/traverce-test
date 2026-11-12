@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
+import { User } from "next-auth";
+
 import {
   Item,
   ItemMedia,
@@ -12,20 +14,19 @@ import {
   ItemActions,
   ItemSeparator,
   ItemContent,
-  ItemTitle,
   ItemFooter,
 } from "@/components/ui/item";
 
+
 export type Suggestion = {
   id: number;
-  username: string;
-  user_profile: string;
+  created_at: Date;
+  user: User
   description: string;
   upvotes: number;
   downvotes: number;
   tags: string[];
-  created_at: Date;
-  status: "approved" | "declined" | "archived";
+  status: "approved" | "declined" | "archived" | "pending";
 };
 
 export default function SuggestionCard({
@@ -41,19 +42,17 @@ export default function SuggestionCard({
         <ItemHeader className="justify-start">
           <ItemMedia>
             <Avatar>
-              <AvatarImage src={suggestion.user_profile} />
+              <AvatarImage src={suggestion.user.image!} />
             </Avatar>
           </ItemMedia>
           <div className="justify-start">
-            <p className="font-bold">{suggestion.username}</p>
+            <p className="font-bold">{suggestion.user.name!}</p>
             <p className="font-light">{cleanDate}</p>
           </div>
         </ItemHeader>
 
-        <ItemContent>
-          <ItemTitle className="font-light text-justify">
-            {suggestion.description}
-          </ItemTitle>
+        <ItemContent className="text-justify">
+          {suggestion.description}
         </ItemContent>
 
         <ItemActions className="flex-col">
